@@ -75,6 +75,7 @@ def make_dir_pattern(root_, videos_info):
 
 
 def make_rename_and_move(new_paths):
+    print new_paths
     for fp, nfp in new_paths.iteritems():
         if not os.path.exists(os.path.dirname(nfp)):
             os.makedirs(os.path.abspath(nfp))
