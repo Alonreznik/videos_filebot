@@ -4,7 +4,7 @@ import time
 from guessit import guessit
 import os
 
-PATH_FORMAT = "{r}/{types}/{title}/Season {season}/{title}_S{season}E{episode}_{format}.{container}"
+PATH_FORMAT = "{r}/{types}/{title}/Season_{season}/{title}_S{season}E{episode}_{format}.{container}"
 TYPES_DIR = {"episode": "TV Series",
              "movie": "Movies"}
 
