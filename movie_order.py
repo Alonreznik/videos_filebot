@@ -56,8 +56,9 @@ def get_filename_info(path_):
     elif os.path.isfile(path_):
         videos_info.append(guessit(os.path.basename(path_)))
 
+    print videos_info
     if videos_info:
-        videos_info = filter(lambda md: 'video/' in md.get('video_info', {}).get('mimetype'),
+        videos_info = filter(lambda md: 'video/' in md.get('video_info', {}).get('mimetype', []),
                              videos_info)
     return videos_info
 
