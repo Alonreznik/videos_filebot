@@ -78,6 +78,7 @@ def make_rename_and_move(new_paths):
         if not os.path.exists(os.path.dirname(nfp)):
             os.makedirs(os.path.abspath(nfp))
 
+        print fp, nfp
         os.rename(fp, nfp)
 
 
