@@ -56,7 +56,6 @@ def get_filename_info(path_):
     elif os.path.isfile(path_):
         videos_info.append(guessit(os.path.basename(path_)))
 
-    print videos_info
     if videos_info:
         videos_info = filter(lambda md: 'video/' in md.get('video_info', {}).get('mimetype', []),
                              videos_info)
@@ -75,7 +74,6 @@ def make_dir_pattern(root_, videos_info):
 
 
 def make_rename_and_move(new_paths):
-    print new_paths
     for fp, nfp in new_paths.iteritems():
         if not os.path.exists(os.path.dirname(nfp)):
             os.makedirs(os.path.abspath(nfp))
@@ -87,7 +85,9 @@ def make_rename_and_move(new_paths):
 def run():
     while True:
         videos_info = get_filename_info(downloaded_dir)
+        print videos_info
         new_paths = make_dir_pattern(root, videos_info)
+        print new_paths
         make_rename_and_move(new_paths)
 
         time.sleep(60)
